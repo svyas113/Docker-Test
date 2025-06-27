@@ -2,6 +2,8 @@ services:
   app:
     image: shivam124/postgres-copilot:latest
     user: "${CURRENT_UID:-0}:${CURRENT_GID:-0}"
+    stdin_open: true
+    tty: true
     volumes:
       - ./memory:/home/appuser/app/memory
       - ./approved_sql:/home/appuser/app/approved_sql
